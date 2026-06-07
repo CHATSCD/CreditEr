@@ -1,0 +1,39 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+}
+
+model CreditItem {
+  id            String     @id @default(cuid())
+  creditorName  String
+  accountNumber String?
+  itemType      String
+  amount        Float?
+  dateReported  DateTime?
+  dateOpened    DateTime?
+  bureaus       String
+  notes         String?
+  createdAt     DateTime   @default(now())
+  disputes      Dispute[]
+}
+
+model Dispute {
+  id             String     @id @default(cuid())
+  creditItemId   String
+  creditItem     CreditItem @relation(fields: [creditItemId], references: [id], onDelete: Cascade)
+  bureau         String
+  strategy       String
+  strategySource String     @default("rules")
+  lawCitation    String?
+  letterContent  String
+  status         String     @default("DRAFT")
+  sentAt         DateTime?
+  responseAt     DateTime?
+  resolvedAt     DateTime?
+  outcome        String?
+  createdAt      DateTime   @default(now())
+  updatedAt      DateTime   @updatedAt
+}
