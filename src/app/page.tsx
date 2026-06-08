@@ -4,6 +4,8 @@ import { ITEM_TYPE_LABELS, STATUS_LABELS } from "@/types";
 import type { ItemType, DisputeStatus } from "@/types";
 import { FileText, CheckCircle, Clock, AlertCircle, Plus } from "lucide-react";
 
+export const dynamic = "force-dynamic";
+
 const STATUS_COLORS: Record<DisputeStatus, string> = {
   DRAFT: "bg-gray-100 text-gray-700",
   SENT: "bg-blue-100 text-blue-700",

@@ -4,6 +4,8 @@ import { prisma } from "@/lib/db";
 import { ArrowLeft } from "lucide-react";
 import LetterClient from "./LetterClient";
 
+export const dynamic = "force-dynamic";
+
 export default async function LetterPage({
   params,
 }: {

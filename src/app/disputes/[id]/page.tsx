@@ -3,6 +3,8 @@ import Link from "next/link";
 import { prisma } from "@/lib/db";
 import { ITEM_TYPE_LABELS, STATUS_LABELS } from "@/types";
 import type { ItemType, DisputeStatus } from "@/types";
+
+export const dynamic = "force-dynamic";
 import StatusControls from "./StatusControls";
 import {
   ArrowLeft,

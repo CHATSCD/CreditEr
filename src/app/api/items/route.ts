@@ -31,7 +31,7 @@ export async function POST(req: NextRequest) {
     });
 
     // Fall back to AI if no rule matched
-    if (!strategyResult && process.env.ANTHROPIC_API_KEY) {
+    if (!strategyResult && process.env.DEEPSEEK_API_KEY) {
       strategyResult = await getAiStrategy({
         itemType: data.itemType as ItemType,
         creditorName: data.creditorName,

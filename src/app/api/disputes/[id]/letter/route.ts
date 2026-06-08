@@ -41,9 +41,9 @@ export async function POST(
       return NextResponse.json({ error: "Not found" }, { status: 404 });
     }
 
-    if (!process.env.ANTHROPIC_API_KEY) {
+    if (!process.env.DEEPSEEK_API_KEY) {
       return NextResponse.json(
-        { error: "AI regeneration requires ANTHROPIC_API_KEY" },
+        { error: "AI regeneration requires DEEPSEEK_API_KEY" },
         { status: 503 }
       );
     }
